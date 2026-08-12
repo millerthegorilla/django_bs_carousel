@@ -11,7 +11,7 @@ self.addEventListener('message', async event => {
     const pkStr = encodeURIComponent(JSON.stringify(event.data.pks));
     const randomizeImages = event.data.randomizeImages;
     const request = new Request(
-        `${event.data.requestUrl}${event.data.webpSupport}/${event.data.screenSize}/${event.data.iteration}/${pkStr}/${indStr}`,
+        `${event.data.requestUrl}/${event.data.screenSize}/${event.data.iteration}/${pkStr}/${indStr}`,
         {
             method: 'GET',
             headers: {'X-CSRFToken': event.data.token,
