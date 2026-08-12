@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const randomizeImages = dataEl.dataset.randomizeImages == 'True' ? true : false;
         const loadingImage = location.protocol + "//" + location.host + dataEl.dataset.loadingImage;
         var carouselEl = document.querySelector('#carousel-large-background');
-        let carousel = bootstrap.Carousel.getInstance(carouselEl);
+        let carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
         var nodes = Singleton.getInstance(randomizeImages).nodeList;
 
         // handles first image.
