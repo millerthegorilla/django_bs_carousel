@@ -181,7 +181,7 @@ var Singleton = (function(){
    };
 })();
 
-$(window).on('load', function() {
+window.addEventListener('DOMContentLoaded', () => {
     const imgElements = document.querySelectorAll('.carousel-image');
     const ieLength = imgElements.length;
     if(ieLength)
@@ -242,9 +242,9 @@ $(window).on('load', function() {
             observer.observe(firstActiveImg, config );
         }
     }
-});
+})
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () {
     const dataEl = document.getElementById('hidden-data');
     const randomizeImages = dataEl.dataset.randomizeImages == 'True' ? true : false;
     const nodes = Singleton.getInstance(randomizeImages).nodeList;
