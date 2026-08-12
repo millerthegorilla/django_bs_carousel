@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const imageSizeLarge = dataEl.dataset.imageSizeLarge;
         const imageSizeSmall = dataEl.dataset.imageSizeSmall;
         const screenSize = window.innerWidth < 500 ? imageSizeSmall : imageSizeLarge;
-        const siteUrl = location.protocol + "//" + location.host + "/imgurl/";
+        const siteUrl = location.protocol + "//" + location.host + "/imgurl";
         const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         const ImageLoaderWorker = new Worker('/static/django_bs_carousel/js/imageLoader.js', {'type': 'classic', 'credentials': 'same-origin'});
         var iteration = 0;
