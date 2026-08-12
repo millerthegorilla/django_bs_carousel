@@ -1,3 +1,20 @@
+[project]
+name = "django-bs-carousel"
+version = "0.1.0"
+description = "django carousel app"
+readme = "README.md"
+license = "MIT"
+authors = [
+  { name = "James Miller", email = "jamesstewartmiller@gmail.com" },
+]
+requires-python = "==3.14.*"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.14",
+]
 [build-system]
 requires = ['setuptools>=40.8.0', 'wheel']
 build-backend = 'setuptools.build_meta:__legacy__'
+dependencies = [
+  "django>=6.0",
+]
