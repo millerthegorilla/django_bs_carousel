@@ -5,9 +5,9 @@ from sorl.thumbnail import get_thumbnail
 from django import shortcuts, http, conf
 from django.apps import apps
 from django.views import generic
+from django.conf import settings
 
-
-
+IMAGE_QUALITY = settings.CAROUSEL_IMAGE_QUALITY if hasattr(settings, "CAROUSEL_IMAGE_QUALITY") else 70
 #webworker ajax request to here, returns url
 class ImgURL(generic.base.View):
     # TODO - create a threaded function inside the get, that pushes its handle to 
@@ -26,7 +26,7 @@ class ImgURL(generic.base.View):
         i = 0;
         for im in image_qs.iterator():
             pic = get_thumbnail(im.file, screen_size, 
-                                    format="WEBP", quality=70).url
+                                    format="WEBP", quality=IMAGE_QUALITY).url
             ql.append({'id': str(image_idxs[image_pks.index(im.pk)]),
                        'pic': pic})
             i = i + 1
